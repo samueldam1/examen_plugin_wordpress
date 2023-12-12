@@ -1,4 +1,11 @@
 <?php
+/*
+ * Plugin Name: Plugin Examen
+ * Plugin URI: http://www.danielcastelao.org/
+ * Description: Cambio de contenido y titulo en referencia al día de la semana
+ * Version: 1.0
+ * Author: Samuel
+*/
 
 // Crear tabla al activar el plugin
 function crear_tabla_contenido_dias() {
@@ -55,4 +62,6 @@ function cambiar_titulo_contenido_segun_dia() {
     }
 }
 
+// Gancho que ejecuta el método después de que se han cargado todos los plugins en WordPress.
+add_action( 'plugins_loaded', 'cambiar_titulo_contenido_segun_dia' );
 ?>
